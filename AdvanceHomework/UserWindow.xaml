@@ -1,0 +1,32 @@
+﻿<Window x:Class="AdvanceHomework.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdvanceHomework"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="optionsButton" Content="Options" HorizontalAlignment="Left" Margin="21,383,0,0" VerticalAlignment="Top" Height="28" Width="95" Click="OptionsButton_Click"/>
+        <TabControl Margin="0,0,10,151">
+            <TabItem x:Name="allProductsTab" Header="Products">
+                <Grid x:Name="allProductsItems" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="773*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="productsTable" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="historyTable" Header="History">
+                <Grid x:Name="historyTableText" Background="#FFE5E5E5">
+                    <DataGrid x:Name="historyGrid" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBox x:Name="productNameToBuy" HorizontalAlignment="Left" Margin="193,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="productQuantityToBuy" HorizontalAlignment="Left" Margin="352,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
+        <Button x:Name="makeOrder" Content="Make Order" HorizontalAlignment="Left" Margin="238,357,0,0" VerticalAlignment="Top" Height="40" Width="162" Click="makeOrder_Click"/>
+
+    </Grid>
+</Window>
